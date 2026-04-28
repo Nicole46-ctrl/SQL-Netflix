@@ -77,6 +77,8 @@ LIMIT 10;
 ```
 This query identifies the countries with the highest number of titles in the dataset, highlighting where most Netflix content originates.
 
+![Top Countries](docs/screenshots/top-countries.png)
+
 ## Dataset
 The project is based on cleaned Netflix titles and credits data stored in CSV files.
 
@@ -192,16 +194,11 @@ SQL-Netflix/
         ├── top-countries.png
         └── top-genres.png
 ```
----
-
-## Final ERD
-
-### Final ERD
-![Final ERD](docs/screenshots/final-erd.png)
 
 
 
 
 
-### Top Countries
-![Top Countries](docs/screenshots/top-countries.png)
+
+
+
