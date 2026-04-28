@@ -1,4 +1,5 @@
 # SQL Netflix Analysis
+A structured SQL portfolio project transforming raw Netflix data into a relational model and actionable insights.
 
 ## Project Overview
 This project explores Netflix titles and credits data using SQL.
@@ -34,6 +35,22 @@ The purpose of this project was to answer questions such as:
 - GitHub for documentation and project structure
 
 ---
+## Key Skills Demonstrated
+- SQL querying and aggregation
+- relational data modeling (1:n, m:n)
+- data cleaning and normalization
+- analytical thinking and interpretation
+
+## Example SQL Query
+
+```sql
+SELECT g.genre, COUNT(*) AS total_titles
+FROM title_genre tg
+JOIN genre g ON tg.genre_id = g.genre_id
+GROUP BY g.genre
+ORDER BY total_titles DESC;
+```
+This query calculates the number of titles per genre and highlights the most common genres in the dataset.
 
 ## Dataset
 The project is based on cleaned Netflix titles and credits data stored in CSV files.
