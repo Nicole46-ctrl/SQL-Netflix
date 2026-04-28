@@ -141,3 +141,19 @@ SQL-Netflix/
         ├── movies-vs-series.png
         ├── top-countries.png
         └── top-genres.png
+```
+---
+
+## Screenshots
+
+### Final ERD
+![Final ERD](docs/screenshots/final-erd.png)
+
+### Movies vs Series
+![Movies vs Series](docs/screenshots/movies-vs-series.png)
+
+### Top Genres
+![Top Genres](docs/screenshots/top-genres.png)
+
+### Top Countries
+![Top Countries](docs/screenshots/top-countries.png)
