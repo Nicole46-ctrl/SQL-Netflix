@@ -41,7 +41,7 @@ The purpose of this project was to answer questions such as:
 - data cleaning and normalization
 - analytical thinking and interpretation
 
-## Example SQL Query
+## Example Analysis: Top Genres
 
 ```sql
 SELECT g.genre, COUNT(*) AS total_titles
@@ -51,6 +51,31 @@ GROUP BY g.genre
 ORDER BY total_titles DESC;
 ```
 This query calculates the number of titles per genre and highlights the most common genres in the dataset.
+
+![Top Genres](docs/screenshots/top-genres.png)
+
+## Example Analysis: Movies vs Series
+
+```sql
+SELECT type, COUNT(*) AS total_titles
+FROM titles
+GROUP BY type;
+```
+This query compares the number of movies and TV shows available in the dataset, providing insight into Netflix's content distribution.
+
+![Movies vs Series](docs/screenshots/movies-vs-series.png)
+
+## Example Analysis: Top Countries
+
+```sql
+SELECT country, COUNT(*) AS total_titles
+FROM titles
+WHERE country IS NOT NULL
+GROUP BY country
+ORDER BY total_titles DESC
+LIMIT 10;
+```
+This query identifies the countries with the highest number of titles in the dataset, highlighting where most Netflix content originates.
 
 ## Dataset
 The project is based on cleaned Netflix titles and credits data stored in CSV files.
@@ -91,7 +116,15 @@ The workflow followed a structured process from raw data to analysis-ready SQL o
 ---
 
 ## Data Model
-A relational schema was built around the central `title` table.
+A relational schema was designed around the central `title` table to enable structured analysis of Netflix content.
+
+### Entity Relationship Diagram (ERD)
+
+![Final ERD](docs/screenshots/final-erd.png)
+
+This ERD shows the relational structure of the dataset, including the relationships between titles, genres, and other entities.
+
+---
 
 ### Core entities
 - `title`
@@ -161,16 +194,14 @@ SQL-Netflix/
 ```
 ---
 
-## Screenshots
+## Final ERD
 
 ### Final ERD
 ![Final ERD](docs/screenshots/final-erd.png)
 
-### Movies vs Series
-![Movies vs Series](docs/screenshots/movies-vs-series.png)
 
-### Top Genres
-![Top Genres](docs/screenshots/top-genres.png)
+
+
 
 ### Top Countries
 ![Top Countries](docs/screenshots/top-countries.png)
