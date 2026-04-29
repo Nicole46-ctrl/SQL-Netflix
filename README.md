@@ -14,6 +14,13 @@ The project focuses on:
 
 ---
 
+## 🔗 Related Project
+
+The SQL data preparation for this dashboard can be found here:  
+👉 https://github.com/Nicole46-ctrl/Netflix-Dashboard
+
+---
+
 ## 🧠 Analysis Questions
 The purpose of this project was to answer questions such as:
 
