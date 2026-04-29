@@ -1,7 +1,7 @@
 # SQL Netflix Analysis
 A structured SQL portfolio project transforming raw Netflix data into a relational model and actionable insights.
 
-## Project Overview
+## 📊 Project Overview
 This project explores Netflix titles and credits data using SQL.
 
 The goal was to transform raw CSV data into a structured relational model, analyze the content catalog, and derive clear business-oriented insights from SQL queries.
@@ -14,7 +14,7 @@ The project focuses on:
 
 ---
 
-## Project Goal
+## 🧠 Analysis Questions
 The purpose of this project was to answer questions such as:
 
 - How is the Netflix catalog structured?
@@ -26,7 +26,7 @@ The purpose of this project was to answer questions such as:
 
 ---
 
-## Tools Used
+## 🛠️ Tools Used
 - SQL
 - PostgreSQL
 - CSV data sources
@@ -35,13 +35,21 @@ The purpose of this project was to answer questions such as:
 - GitHub for documentation and project structure
 
 ---
-## Key Skills Demonstrated
+## 💡 Key Skills Demonstrated
 - SQL querying and aggregation
 - relational data modeling (1:n, m:n)
 - data cleaning and normalization
 - analytical thinking and interpretation
 
-## Example Analysis: Top Genres
+## 📈 Example Analysis: Top Genres
+
+### 🎯 Objective
+
+Identify the most frequent genres in the Netflix catalog to understand content distribution and platform focus.
+
+---
+
+### 🧾 SQL Query
 
 ```sql
 SELECT g.genre, COUNT(*) AS total_titles
@@ -54,18 +62,67 @@ This query calculates the number of titles per genre and highlights the most com
 
 ![Top Genres](docs/screenshots/top-genres.png)
 
-## Example Analysis: Movies vs Series
+---
+
+### 📊 Result
+
+The query returns the number of titles per genre, sorted by frequency.
+
+![Top Genres](docs/screenshots/top-genres.png)
+
+---
+
+### 💡 Insight
+
+- **Drama and Comedy dominate the catalog**, indicating a strong focus on mainstream audience preferences
+- Genres like **Thriller and Action** maintain a solid presence, supporting diverse viewing options
+- Lower-frequency genres (e.g. Fantasy, Family) highlight niche segments within the catalog
+- The distribution suggests Netflix prioritizes widely appealing content while still offering variety
+- The dominance of these genres reflects global viewing trends and high audience engagement formats
+
+## 📊 Example Analysis: Movies vs. Series
+
+### 🎯 Objective
+
+Compare the distribution of movies and TV series in the dataset to understand the overall content structure.
+
+---
+
+### 🧾 SQL Query
 
 ```sql
 SELECT type, COUNT(*) AS total_titles
 FROM titles
 GROUP BY type;
 ```
-This query compares the number of movies and TV shows available in the dataset, providing insight into Netflix's content distribution.
 
 ![Movies vs Series](docs/screenshots/movies-vs-series.png)
 
-## Example Analysis: Top Countries
+---
+
+### 📊 Result
+
+The query shows the total number of movies and TV series in the dataset.
+
+![Movies vs Series](docs/screenshots/movies-vs-series.png)
+
+---
+
+### 💡 Insight
+
+- Movies represent the majority of the catalog (~65%), while series account for ~35%
+- This indicates a stronger focus on standalone content rather than episodic formats
+- The imbalance suggests Netflix prioritizes scalable content production
+
+## 🌍 Example Analysis: Top Countries
+
+### 🎯 Objective
+
+Identify which countries contribute the most titles to the Netflix catalog.
+
+---
+
+### 🧾 SQL Query
 
 ```sql
 SELECT country, COUNT(*) AS total_titles
@@ -79,7 +136,23 @@ This query identifies the countries with the highest number of titles in the dat
 
 ![Top Countries](docs/screenshots/top-countries.png)
 
-## Dataset
+---
+
+### 📊 Result
+
+The query returns the top 10 countries by number of titles.
+
+![Top Countries](docs/screenshots/top-10-countries.png)
+
+---
+
+### 💡 Insight
+
+- The United States dominates the catalog by a large margin
+- India and the UK are strong secondary contributors
+- This reflects both market size and Netflix’s regional expansion strategy
+
+## 🗂️ Dataset
 The project is based on cleaned Netflix titles and credits data stored in CSV files.
 
 Main source files:
@@ -94,7 +167,7 @@ The raw data included several structural challenges, such as:
 
 ---
 
-## Source / Reference
+## 📚 Source / Reference
 This project is based on the Netflix dataset project by Arpita Deb.
 
 Original reference:
@@ -104,7 +177,7 @@ This repository reflects my own adaptation and further development of the topic,
 
 ---
 
-## Methodology
+## ⚙️ Methodology
 The workflow followed a structured process from raw data to analysis-ready SQL outputs:
 
 1. Analyze the raw dataset
@@ -117,18 +190,23 @@ The workflow followed a structured process from raw data to analysis-ready SQL o
 
 ---
 
-## Data Model
-A relational schema was designed around the central `title` table to enable structured analysis of Netflix content.
+## 🏗️ Data Model
 
-### Entity Relationship Diagram (ERD)
+A relational schema was designed around the central `title` table to transform the raw Netflix dataset into an analysis-ready structure.
 
-![Final ERD](docs/screenshots/final-erd.png)
+The original data contained several multi-value fields (e.g. genres, countries, actors), which were normalized into separate tables to ensure scalability and flexibility.
 
-This ERD shows the relational structure of the dataset, including the relationships between titles, genres, and other entities.
+### 🔑 Key Design Decisions
+
+- Separation of core entities such as `title`, `genre`, `country`, `actor`, and `director`
+- Implementation of **1:n** relationships for attributes like `title_type` and `age_certification`
+- Use of **m:n relationship tables** (e.g. `title_genre`, `title_actor`) to handle multi-value attributes
+- Creation of a modular structure that supports efficient aggregation and filtering
 
 ---
 
-### Core entities
+### 🧱 Core Entities
+
 - `title`
 - `title_type`
 - `age_certification`
@@ -137,21 +215,33 @@ This ERD shows the relational structure of the dataset, including the relationsh
 - `actor`
 - `director`
 
-### Relationship tables
+---
+
+### 🔗 Relationship Tables
+
 - `title_genre`
 - `title_country`
 - `title_actor`
 - `title_director`
 
-### Relationship logic
-- `title_type` and `age_certification` are modeled as **1:n** relationships to `title`
-- `genre`, `country`, `actor`, and `director` are modeled as **m:n** relationships using bridge tables
+---
 
-This design makes the dataset much more flexible and analysis-ready than the original raw structure.
+### 🔄 Relationship Logic
+
+- `title_type` and `age_certification` → **1:n relationships**
+- `genre`, `country`, `actor`, `director` → **m:n relationships via bridge tables**
 
 ---
 
-## Views Used
+### 🖼️ Entity Relationship Diagram (ERD)
+
+![Final ERD](docs/screenshots/final-erd.png)
+
+This ERD visualizes the normalized database structure and highlights how entities are connected within the relational model.
+
+---
+
+## 🧩 Views Used
 To simplify recurring SQL analyses, reusable views were created:
 
 - `vw_titles_per_year` → number of titles per release year
@@ -162,7 +252,7 @@ Views helped encapsulate frequently used logic and made standard evaluations eas
 
 ---
 
-## Key Findings
+## 📊 Key Insights
 Some of the main findings from the project were:
 
 - The dataset contains **5,806 titles** in total
@@ -174,7 +264,7 @@ Some of the main findings from the project were:
 
 ---
 
-## Repository Structure
+## 📂 Project Structure
 ```text
 SQL-Netflix/
 ├── README.md
