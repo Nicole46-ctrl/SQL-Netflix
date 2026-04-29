@@ -1,5 +1,8 @@
-# SQL Netflix Analysis
-A structured SQL portfolio project transforming raw Netflix data into a relational model and actionable insights.
+# 🎬 SQL Netflix Analysis
+
+A structured SQL portfolio project transforming raw Netflix data into a normalized relational model and actionable insights.
+
+---
 
 ## 📊 Project Overview
 This project explores Netflix titles and credits data using SQL.
@@ -16,8 +19,9 @@ The project focuses on:
 
 ## 🔗 Related Project
 
-The SQL data preparation for this dashboard can be found here:  
-👉 https://github.com/Nicole46-ctrl/Netflix-Dashboard
+👉 [📊 Netflix Dashboard (Excel)](https://github.com/Nicole46-ctrl/Netflix-Dashboard)
+
+This dashboard builds on the SQL analysis and visualizes key findings using Excel.
 
 ---
 
@@ -291,6 +295,18 @@ SQL-Netflix/
         ├── top-countries.png
         └── top-genres.png
 ```
+## 🚀 How to Use
+
+1. Import the CSV files into your SQL environment
+2. Run the queries from `analysis.sql`
+3. Explore the results and adapt queries for further analysis
+
+---
+
+## 👤 Author
+
+Nicole  
+Aspiring Data Analyst  
 
 
 
